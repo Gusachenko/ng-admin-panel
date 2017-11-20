@@ -1,0 +1,107 @@
+<div class="main-wrapper" role="main" *ngIf="enable">
+
+
+  <div class="users-block mat-elevation-z8">
+    <div class="users-block__title">
+      <span>Пользователи</span>
+    </div>
+    <div class="users-block__content">
+      <div class="users-filter mat-tab-nav-bar">
+
+        <div class="users-filter__title">
+          <span>Фильтры</span>
+        </div>
+
+        <mat-form-field class="users-filter__input">
+          <input matInput type="text" placeholder="Фамилия" (keyup)="applyNameFilter()" [(ngModel)]="filterNameValue" />
+          <button mat-button *ngIf="filterNameValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearNameFilter()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field class="users-filter__input">
+          <mat-select placeholder="Подразделение" [(ngModel)]="filterDepartmentValue" (selectionChange)="applyDepartmentFilter()">
+            <mat-option>Подразделение</mat-option>
+            <mat-option *ngFor="let department of departmentList" [value]="department.value">
+              {{ department.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="users-filter__input">
+          <mat-select placeholder="Должность" [(ngModel)]="filterPositionValue" (selectionChange)="applyPositionFilter()">
+            <mat-option>Должность</mat-option>
+            <mat-option *ngFor="let position of positionList" [value]="position.value">
+              {{ position.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+
+      <div class="department-list">
+
+        <div *ngFor="let department of departments" class="department">
+
+          <div class="department__header">
+
+            <div class="department__header__actions button-row">
+              <button (click)="addDepartmentUser(department.name)" mat-mini-fab color="primary" title="Добавление пользователя">
+                <mat-icon aria-label="add">add</mat-icon>
+              </button>
+            </div>
+
+            <div class="department__header__title">
+              <span>{{department.name}}</span>
+            </div>
+
+          </div>
+
+          <mat-table [dataSource]="department.tableDataSource">
+
+            <ng-container matColumnDef="lastName">
+              <mat-header-cell *matHeaderCellDef> Фамилия </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef> Должность </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+
+              <mat-cell *matCellDef="let element">
+
+                <div class="button-row">
+                  <button mat-button (click)="photoDepartmentUser()">Фото</button>
+                  <button mat-button (click)="settingsDepartmentUser(element)">Просмотр</button>
+                  <button mat-button (click)="removeDepartmentUser(element)">Удалить</button>
+                </div>
+
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="department.displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: department.displayedColumns;"></mat-row>
+          </mat-table>
+
+        </div>
+
+        <button *ngIf="sourceUsersModel.length === 0" (click)="addDepartmentUser('Департамент управления персоналом')" mat-mini-fab
+          color="primary" title="Добавление пользователя">
+          <mat-icon aria-label="add">add</mat-icon>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <app-user-dialog #userDialog></app-user-dialog>
+
+
+</div>

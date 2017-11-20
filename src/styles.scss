@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~normalize.css/normalize.css";
+
+@import "~material-design-icons/iconfont/material-icons.css";
+@import "~roboto-fontface/css/roboto/roboto-fontface.css";
+
+html, body {
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+html{
+
+  body{
+    
+
+    background-color: #fafafa;
+    color: #212121;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+
+    &.disable-scroll{
+        overflow: hidden;
+    }
+  }
+}

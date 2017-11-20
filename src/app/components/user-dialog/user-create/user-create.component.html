@@ -1,0 +1,78 @@
+<h2 mat-dialog-title>Создание пользователя</h2>
+<mat-dialog-content>
+
+  <mat-form-field class="separate-control">
+    <input matInput [(ngModel)]="userObject.lastName" placeholder="Фамилия">
+  </mat-form-field>
+  <mat-form-field class="separate-control">
+    <input matInput [(ngModel)]="userObject.firstName" placeholder="Имя">
+  </mat-form-field>
+
+  <mat-form-field class="separate-control">
+    <input matInput [(ngModel)]="userObject.otchestvoName" placeholder="Отчество">
+  </mat-form-field>
+
+
+  <div class="radio-buttons separate-control">
+    <label>Пол:</label>
+    <mat-radio-group [(ngModel)]="userObject.sex">
+      <mat-radio-button value="male">Муж</mat-radio-button>
+      <mat-radio-button value="female">Жен</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+
+  <mat-form-field class="load-image separate-control">
+    <input matInput [disabled]="true" [(ngModel)]="userObject.photo" placeholder="Загрузка фото">
+    <mat-icon matSuffix>folder</mat-icon>
+  </mat-form-field>
+
+
+
+  <mat-form-field class="separate-control">
+    <mat-select [(ngModel)]="userObject.position" placeholder="Должность">
+      <ng-container *ngFor="let position of positionList">
+        <mat-option [value]="position.value">
+          {{ position.value }}
+        </mat-option>
+      </ng-container>
+
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="separate-control">
+    <mat-select placeholder="Подразделение" [disabled]='true' [(value)]="data.departmentName">
+      <mat-option [value]="data.departmentName">
+        {{ data.departmentName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+
+  <div class="accesses">
+    <h3>Доступы</h3>
+
+    <section *ngFor='let access of accessesList'>
+      <mat-checkbox [(ngModel)]="userObject.accesses[access.key]">
+        {{access.value}}
+      </mat-checkbox>
+    </section>
+
+  </div>
+
+
+
+
+
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onSaveClick()" tabindex="1">Сохранить</button>
+  <button mat-button mat-dialog-close tabindex="-1">Отмена</button>
+</mat-dialog-actions>

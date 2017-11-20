@@ -1,0 +1,90 @@
+$usersFilterHeight: 70px;
+.main-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto; // background: white;
+    .users-block {
+        position: relative;
+        left: 50%;
+        top: 10%;
+        margin: 5% 0;
+        transform: translateX(-50%);
+        width: 748px;
+        height: auto;
+        min-width: 748px;
+        max-width: 972px; // border:1px dashed grey;
+        .users-block__title {
+            padding: 2%;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .users-block__content {
+            position: relative;
+            .users-filter {
+                position: relative;
+                height: $usersFilterHeight;
+                padding: 0 10px; // border:1px dashed green;
+                .users-filter__title {
+                    margin-right: 40px;
+                    line-height: $usersFilterHeight;
+                    float: left;
+                }
+                .users-filter__input {
+                    width: 180px;
+                    margin-right: 25px;
+                    margin-left: 0px;
+                    float: left;
+                }
+            }
+            .department-list {
+                width: auto;
+                height: auto;
+                position: relative;
+                display: block;
+                padding: 10px;
+                .department {
+                    margin-top: 10px;
+                    .department__header {
+                        position: relative;
+                        height: 50px;
+                        margin-left: 5px;
+                        .department__header__actions {
+                            position: relative;
+                            float: left;
+                        }
+                        .department__header__title {
+                            float: left;
+                            margin-left: 25px;
+                            line-height: 50px;
+                        }
+                        .department__header__actions {
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .mat-table {
+                        margin-left: 70px;
+                        margin-right: 10px;
+                        height: auto;
+                        .mat-header-row {
+                            display: none;
+                        }
+                        .mat-cell.mat-column-actions {
+                            flex: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1500px) {}
+
+@media screen and (max-width: 960px) {
+    .main-wrapper {
+        .users-block {}
+    }
+}

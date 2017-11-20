@@ -1,0 +1,13 @@
+$separateControlHeight: 70px;
+.separate-control{
+    display: block;
+    height: $separateControlHeight;
+
+    &.radio-buttons{
+        line-height: $separateControlHeight;
+
+        .mat-radio-group{
+            margin-left: 25px;
+        }
+    }
+}
