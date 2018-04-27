@@ -39,9 +39,9 @@ $usersFilterHeight: 70px;
         }
       }
       .department-list {
+        position: relative;
         width: auto;
         height: auto;
-        position: relative;
         display: block;
         padding: 10px;
         .department {

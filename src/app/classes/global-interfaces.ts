@@ -11,18 +11,18 @@ export class UserObject {
     openDeposit: boolean;
     closeDeposit: boolean;
     approveCredit: boolean;
-    approveAccountOpen: boolean
+    approveAccountOpen: boolean;
   };
 
   constructor(
     id: string = undefined,
-    firstName: string = "",
-    lastName: string = "",
-    otchestvoName: string = "",
-    sex: string = "",
+    firstName: string = '',
+    lastName: string = '',
+    otchestvoName: string = '',
+    sex: string = '',
     photo: any = undefined,
-    position: string = "",
-    department: string = "",
+    position: string = '',
+    department: string = '',
     accesses: any = {
       openDeposit: false,
       closeDeposit: false,
@@ -39,6 +39,5 @@ export class UserObject {
     this.position = position;
     this.department = department;
     this.accesses = accesses;
-
   }
 }
