@@ -12,7 +12,7 @@ Provides sample admin panel component's structure.
 - Add/Del/Update data store operations
 - Sample structure
 
- ### [DEMO](https://stackblitz.com/github/gusachenko/ng-material-starter "Live demo preview")
+ ### [DEMO](https://stackblitz.com/github/gusachenko/ng-admin-panel "Live demo preview")
 
 # Stack
 - Angular 5+
