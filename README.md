@@ -1,29 +1,33 @@
-Админка
-# Solution2(angular5+ & mongodb api)
+# Admin panel & RxJS &  Material Design 2
+Provides sample admin panel component's structure.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+![Admin panel's](https://github.com/Gusachenko/ng-material-starter/blob/master/github-assets/dimensions.png?raw=true "Panel's views")
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Feaures
+- User's filter panel
+- User's config modal window
+- User's Add modal window
+- User's photo modal window
+- Add/Del/Update data store operations
+- Sample structure
 
-## Code scaffolding
+ ### [DEMO](https://stackblitz.com/github/gusachenko/ng-material-starter "Live demo preview")
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Stack
+- Angular 5+
+- Angular HTTP request's(@angular/http)
+- RxJS state management
+- MongoDB API (Amazon)
+- Material Design
+- Roboto font's (host or local)
+- Material icon's (host or local)
 
-## Build
+# Getting started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+git clone https://github.com/Gusachenko/ng-admin-panel.git new-project
+cd new-project
+npm install
+npm start
+```
