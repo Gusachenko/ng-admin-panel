@@ -14,29 +14,26 @@ import { UserObject } from 'app/classes/global-interfaces';
   styleUrls: ['./user-dialog.component.scss']
 })
 export class UserDialogComponent implements OnInit {
-
-  constructor(public dialog: MatDialog, private globalStateService: GlobalStateService) { }
+  constructor(public dialog: MatDialog, private globalStateService: GlobalStateService) {}
 
   openPhoto() {
     const dialogRef = this.dialog.open(UserPhotoComponent, {
       width: '300px'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-    });
+    dialogRef.afterClosed().subscribe(result => {});
   }
 
   addDepartmentUser(departmentName: string) {
     const dialogRef = this.dialog.open(UserCreateComponent, {
       width: '480px',
       data: {
-        'departmentName': departmentName
+        departmentName: departmentName
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (!!result)
-        this.globalStateService.changeUsersDataItemState(result);
+      if (!!result) this.globalStateService.changeUsersDataItemState(result);
     });
   }
 
@@ -44,18 +41,14 @@ export class UserDialogComponent implements OnInit {
     const dialogRef = this.dialog.open(UserSettingsComponent, {
       width: '480px',
       data: {
-        'userObject': userObject
+        userObject: userObject
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (!!result)
-        this.globalStateService.changeUsersDataItemState(result);
+      if (!!result) this.globalStateService.changeUsersDataItemState(result);
     });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
-

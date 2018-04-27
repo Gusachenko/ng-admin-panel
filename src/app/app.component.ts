@@ -32,7 +32,6 @@ export class AppComponent implements AfterViewInit {
 
   constructor(private apiDbService: ApiDbService, private globalStateService: GlobalStateService) {
     this.apiDbService.getAllData().subscribe(data => {
-
       if (!!data.elementData) {
         this.globalStateService.changeUsersDataModelState(data.elementData);
         this.enable = true;
@@ -50,7 +49,6 @@ export class AppComponent implements AfterViewInit {
       this.apiDbService.updateAllData(this.sourceUsersModel).subscribe(data => {});
       this.filtersExecute();
     });
-
   }
 
   ngAfterViewInit() {
@@ -110,8 +108,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   private filtersExecute(): void {
-    let resultModelData,
-      bufferData;
+    let resultModelData, bufferData;
     resultModelData = this.sourceUsersModel;
 
     if (this.filterNameValue !== '' && !!this.filterNameValue) {
@@ -191,16 +188,13 @@ export class AppComponent implements AfterViewInit {
     for (let key in separateDepartmentsData) {
       if (separateDepartmentsData.hasOwnProperty(key)) {
         let departmentData = separateDepartmentsData[key];
-        if (departmentData.length !== 0)
-          departmentsArr.push(new Department(key, departmentData));
+        if (departmentData.length !== 0) departmentsArr.push(new Department(key, departmentData));
       }
     }
 
     return departmentsArr;
   }
-
 }
-
 
 class Department {
   private _name: string;
@@ -223,14 +217,12 @@ class Department {
     this._elements = newElements;
   }
 
-
   constructor(name, elements) {
     this._name = name;
     this._elements = elements;
 
     this.tableDataSource = new MatTableDataSource(this.elements);
-  };
-
+  }
 }
 
 // const ELEMENT_DATA: UserObject[] = [
