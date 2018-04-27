@@ -4,7 +4,7 @@ Provides sample admin panel component's structure.
 ![Admin panel's](https://github.com/Gusachenko/ng-admin-panel/blob/master/github_assets/panels.png?raw=true "Panel's views")
 
 
-# Feaures
+# Features
 - User's filter panel
 - User's config modal window
 - User's Add modal window
