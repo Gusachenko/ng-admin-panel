@@ -1,7 +1,7 @@
 # Admin panel & RxJS &  Material Design 2
 Provides sample admin panel component's structure.
 
-![Admin panel's](https://github.com/Gusachenko/ng-material-starter/blob/master/github-assets/dimensions.png?raw=true "Panel's views")
+![Admin panel's](https://github.com/Gusachenko/ng-admin-panel/blob/master/github_assets/panels.png?raw=true "Panel's views")
 
 
 # Feaures
@@ -12,7 +12,7 @@ Provides sample admin panel component's structure.
 - Add/Del/Update data store operations
 - Sample structure
 
- ### [DEMO](https://stackblitz.com/github/gusachenko/ng-material-starter "Live demo preview")
+ ### [DEMO](https://stackblitz.com/github/gusachenko/ng-admin-panel "Live demo preview")
 
 # Stack
 - Angular 5+
