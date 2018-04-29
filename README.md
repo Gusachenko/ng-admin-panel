@@ -18,7 +18,7 @@ Provides sample admin panel component's structure.
 - Angular 5+
 - Angular HTTP request's(@angular/http)
 - RxJS state management
-- MongoDB API (Amazon)
+- REST API (Amazon MongoDB)
 - Material Design
 - Roboto font's (host or local)
 - Material icon's (host or local)
